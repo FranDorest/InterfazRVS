@@ -1,0 +1,19 @@
+{
+  "name": "interfazrvs",
+  "version": "1.0.0",
+  "description": "Interfaz de control RVS",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FranDorest/InterfazRVS.git"
+  },
+  "author": "Fran Doreste",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FranDorest/InterfazRVS/issues"
+  },
+  "homepage": "https://github.com/FranDorest/InterfazRVS#readme"
+}
