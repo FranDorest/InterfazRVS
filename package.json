@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/FranDorest/InterfazRVS/issues"
   },
-  "homepage": "https://github.com/FranDorest/InterfazRVS#readme"
+  "homepage": "https://github.com/FranDorest/InterfazRVS#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
 }
