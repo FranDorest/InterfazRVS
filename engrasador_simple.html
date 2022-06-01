@@ -13,12 +13,16 @@
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/af80500dd3.js" crossorigin="anonymous"></script>
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -377,11 +381,152 @@
                                     </div>
 
                                     <div role="tabpanel" class="tab-pane fade" id="configuracion">
-                                        <p>configuracion</p>
+                                        <br>
+                                        <form>
+                                            <div class="form-group row">
+                                                <div class="col-sm-5 m-4 border-left-info">
+                                                    <h4 class="font-weight-bold">configuración</h4>
+                                                    <div class="row col-m-12 ">
+                                                        <label for="inputFirstname" class="col-form-label col-8 mb-1">T' presión de trabajo no alcanzada</label>
+                                                        <input type="number" class="form-control col-4" id="inputFirstname" placeholder="60">
+                                                    </div>
+                                                    <div class="row col-m-12 ">
+                                                        <label for="inputFirstname" class="col-form-label col-8 mb-1">T' trabajo electroválvula</label>
+                                                        <input type="number" class="form-control col-4" id="inputFirstname" placeholder="3">
+                                                    </div>
+                                                    <div class="row col-m-12 ">
+                                                        <label for="inputFirstname" class="col-form-label col-8 mb-1">T' detección entre trenes</label>
+                                                        <input type="number" class="form-control col-4" id="inputFirstname" placeholder="50">
+                                                    </div>
+                                                    <div class="row col-m-12 ">
+                                                        <label for="inputFirstname" class="col-form-label col-8  mb-1">Nº Trenes de pausa</label>
+                                                        <input type="number" class="form-control col-4" id="inputFirstname" placeholder="3">
+                                                    </div>
+                                                    <div class="row col-m-12 ">
+                                                        <label for="inputFirstname" class="col-form-label col-8  mb-1">Valor de presurización</label>
+                                                        <input type="number" class="form-control col-4" id="inputFirstname" placeholder="170 bar">
+                                                    </div>
+                                                    <div class="row col-m-12 ">
+                                                        <label for="inputFirstname" class="col-form-label col-8  mb-1">Valor de despresurización</label>
+                                                        <input type="number" class="form-control col-4" id="inputFirstname" placeholder="20 bar">
+                                                    </div>
+                                                    <div class="row col-m-12 ">
+                                                        <label for="inputFirstname" class="col-form-label col-8  mb-1">% Depósito alto</label>
+                                                        <input type="number" class="form-control col-4" id="inputFirstname" placeholder="95%">
+                                                    </div>
+                                                    <div class="row col-m-12 ">
+                                                        <label for="inputFirstname" class="col-form-label col-8  mb-1">% Depósito bajo</label>
+                                                        <input type="number" class="form-control col-4" id="inputFirstname" placeholder="20%">
+                                                    </div>
+                                                    <div class="row col-m-12 ">
+                                                        <label for="inputFirstname" class="col-form-label col-8  mb-1">Nº Disparos consecutivos</label>
+                                                        <input type="number" class="form-control col-4" id="inputFirstname" placeholder="1">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-5 m-4 border-left-info">
+                                                    <h4 class="font-weight-bold">Gestión</h4>
+                                                    <div class="row col-m-12">
+                                                        <label for="inputFirstname" class="col-form-label col-8 mb-1">Tiempo presión de trabajo no alcanzada</label>
+                                                        <input type="number" class="form-control col-4" id="inputFirstname" placeholder="60">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-primary px-4 float-center">Aplicar</button>
+                                        </form>
                                     </div>
+                                    
 
                                     <div role="tabpanel" class="tab-pane fade" id="alarmas">
                                         <p>alarmas</p>
+                                        <!-- Topbar Search -->
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered display compact" id="dataTable" width="100%" cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Fecha</th>
+                                                        <th >Código</th>
+                                                        <th>mensaje</th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                                
+                                                <tbody>
+                                                    <tr>
+                                                        <td>31/05/2022 15:00:32</td>
+                                                        <td>340</td>
+                                                        <td>Caída de tensión</td>
+                                                        <th><i class="fa-solid fa-triangle-exclamation text-warning"></i></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>31/05/2022 14:50:72</td>
+                                                        <td>330</td>
+                                                        <td>Nivel del depósito mínimo</td>
+                                                        <th><i class="fa-solid fa-triangle-exclamation text-danger"></i></th>
+                                                    </tr>
+                                                    <tr>
+                                                        
+                                                        <td>31/05/2022 14:50:70</td>
+                                                        <td>340</td>
+                                                        <td>Caída de tensión</td>
+                                                        <th><i class="fa-solid fa-triangle-exclamation text-warning"></i></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>31/05/2022 14:50:70</td>
+                                                        <td>340</td>
+                                                        <td>Caída de tensión</td>
+                                                        <th><i class="fa-solid fa-triangle-exclamation text-warning"></i></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>31/05/2022 14:50:32</td>
+                                                        <td>340</td>
+                                                        <td>Caída de tensión</td>
+                                                        <th><i class="fa-solid fa-triangle-exclamation text-warning"></i></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>31/05/2022 15:00:32</td>
+                                                        <td>280</td>
+                                                        <td>Presión máxima alcanzada</td>
+                                                        <th><i class="fa-solid fa-triangle-exclamation text-danger"></i></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>31/05/2022 15:00:32</td>
+                                                        <td>340</td>
+                                                        <td>Caída de tensión</td>
+                                                        <th><i class="fa-solid fa-triangle-exclamation text-warning"></i></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>31/05/2022 15:00:32</td>
+                                                        <td>340</td>
+                                                        <td>Caída de tensión</td>
+                                                        <th><i class="fa-solid fa-triangle-exclamation text-warning"></i></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>31/05/2022 15:00:32</td>
+                                                        <td>340</td>
+                                                        <td>Caída de tensión</td>
+                                                        <th><i class="fa-solid fa-triangle-exclamation text-warning"></i></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>31/05/2022 15:00:32</td>
+                                                        <td>280</td>
+                                                        <td>Presión máxima alcanzada</td>
+                                                        <th><i class="fa-solid fa-triangle-exclamation text-danger"></i></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>31/05/2022 15:00:32</td>
+                                                        <td>270</td>
+                                                        <td>Presión no mantenida</td>
+                                                        <th><i class="fa-solid fa-triangle-exclamation text-danger"></i></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>31/05/2022 15:00:32</td>
+                                                        <td>310</td>
+                                                        <td>Nivel del depósito bajo</td>
+                                                        <th><i class="fa-solid fa-triangle-exclamation text-warning"></i></th>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
 
                                 </div>
@@ -445,6 +590,13 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
 
 </body>
 
